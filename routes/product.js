@@ -15,6 +15,9 @@ var storage = multer.diskStorage({
 
 var user = require('../controller/productcontroller')
 
-router.post('/add_product',upload.array('image', 10),user.add_product)
+router.post('/add_product',upload.array('image',5),user.add_product)
+router.get('/allproduct',user.view_product)
+router.post('/update/:id',user.update_product)
+router.post('/delete/:id',user.delete_product)
 
 module.exports = router;

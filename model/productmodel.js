@@ -4,6 +4,9 @@ var product_schema = new mongoose.Schema({
     price:{
         type: String
     },
+    title:{
+        type:String
+    },
     offer:{
         type:String
     },
@@ -13,10 +16,13 @@ var product_schema = new mongoose.Schema({
     rating:{
         type:String
     },
-    image:[{
+    image:{
         type:String
-    }],
+    },
     category:{
+        type:String
+    },
+    company:{
         type:String
     }
 })
