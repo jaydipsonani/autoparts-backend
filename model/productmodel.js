@@ -16,6 +16,9 @@ var product_schema = new mongoose.Schema({
     rating:{
         type:String
     },
+    thumbnail:{
+        type:String
+    },
     image:{
         type:String
     },
