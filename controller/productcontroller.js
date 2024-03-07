@@ -2,17 +2,11 @@ var product = require('../model/productmodel')
 
 exports.add_product = async (req, res) => {
 
-var img = await req.files.length
-var images = "";
-
-for(var ind=0;ind<img;ind++) {
-    var images = images+','+req.files[ind].originalname
-}
-// req.body.thumbnail = req.files[0].originalname;
-req.body.image = images;
-
+    
     var data = await product.create(req.body)
- 
+
+    req.body.image = req.file.originalname;
+
     res.status(200).json({
         status: 'success',
         data
@@ -28,7 +22,6 @@ exports.view_product =  async (req, res) => {
     })
     
 }
-
 exports.update_product = async (req, res) => {
 
     var v_id = req.params.id;

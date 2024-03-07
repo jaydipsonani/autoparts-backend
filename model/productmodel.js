@@ -13,12 +13,6 @@ var product_schema = new mongoose.Schema({
     discountprice:{
         type:String
     },
-    rating:{
-        type:String
-    },
-    thumbnail:{
-        type:String
-    },
     image:{
         type:String
     },
