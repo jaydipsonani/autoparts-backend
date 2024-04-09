@@ -23,7 +23,7 @@ exports.add_product = async (req, res) => {
     
         var data = await product.find()
         res.status(200).json({
-            status:'sucess',
+            status:'success',
             data
         })
         

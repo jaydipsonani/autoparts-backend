@@ -21,7 +21,11 @@ var product_schema = new mongoose.Schema({
     },
     company:{
         type:String
+    },
+    sub_product:{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'sub_product'
     }
 })
 
-module.exports = mongoose.model('Product',product_schema)
+module.exports = mongoose.model('Product',product_schema)   

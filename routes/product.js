@@ -4,19 +4,19 @@ const multer = require('multer');
 
 //multer start
 var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'public/images')
-    },
-    filename: function (req, file, cb) {
-       cb(null, file.originalname)
-    }
-  })
-  var upload = multer({ storage: storage })
+  destination: function (req, file, cb) {
+    cb(null, 'public/images')
+  },
+  filename: function (req, file, cb) {
+  cb(null, file.originalname)
+  }
+})
+var upload = multer({ storage: storage })
 
 var user = require('../controller/productcontroller')
-router.post('/add_product',upload.single('image'),user.add_product)
-router.get('/allproduct',user.view_product)
-router.post('/update/:id',user.update_product)
-router.post('/delete/:id',user.delete_product)
+router.post('/add_product', upload.single('image'), user.add_product)
+router.get('/allproduct', user.view_product)
+router.post('/update/:id', user.update_product)
+router.post('/delete/:id', user.delete_product)
 
 module.exports = router;

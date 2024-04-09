@@ -27,6 +27,10 @@ var product_schema = new mongoose.Schema({
             },
             brand:{
                 type:String
+            },
+            product_id : {
+                type: mongoose.Schema.Types.ObjectId, 
+                ref : "Product"
             }
 })
 
